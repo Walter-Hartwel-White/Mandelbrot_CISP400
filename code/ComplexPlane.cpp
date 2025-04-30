@@ -80,7 +80,7 @@ void ComplexPlane::loadText(Text& text) {
 //}
 
 void ComplexPlane::updateRender() {
-	int numThreads = 4; //cores
+	int numThreads = std::thread::hardware_concurrency(); //cores
 	int half = numThreads / 2;
 	int pixelWidth = m_pixel_size.x;
 	int pixelHeight = m_pixel_size.y;
